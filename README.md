@@ -22,3 +22,13 @@ $ sprout add email git@github.com:carrot/sprout-email
 ```sh
 $ sprout init email /path/to/email
 ```
+
+### Generators
+If you need to add a template later, you can do so with a generator.
+
+```sh
+$ sprout run email email <name-of-template>
+```
+
+#### Options:
+- [base](root/src) (default)

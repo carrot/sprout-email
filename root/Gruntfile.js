@@ -9,8 +9,10 @@ module.exports = function (grunt) {
     watch: {
       scripts: {
         files: 'src/**/*',
-        tasks: ['compile']
+        tasks: ['compile'],
+        livereload: true
       }
+
     },
 
     /*
@@ -20,7 +22,10 @@ module.exports = function (grunt) {
     jade: {
       compile: {
         files: {
-          'dest/index.html': ['src/index.jade']
+          'dest/index.html': ['src/index.jade', 'src/layout.jade']
+        },
+        options: {
+          pretty: true
         }
       }
     },
@@ -46,6 +51,22 @@ module.exports = function (grunt) {
     },
 
     /*
+     * Reload the browser on changes.
+     */
+
+    browserSync: {
+      bsFiles: {
+          src : ['/index.html']
+      },
+      options: {
+        watchTask: true,
+        server: {
+          baseDir: "./dest"
+        }
+      }
+    },
+
+    /*
      * Remove css files from destination.
      */
 
@@ -62,12 +83,13 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-juice-email');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-browser-sync');
 
   /*
    * Register tasks.
    */
 
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['browserSync', 'watch']);
   grunt.registerTask('compile', ['jade', 'stylus', 'juice', 'clean']);
 
 }
