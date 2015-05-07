@@ -2,15 +2,14 @@
   "name": "sprout-email",
   "version": "0.0.1",
   "description": "A sprout template for creating e-mail templates.",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "mocha": "2.2.x",
-    "coffee-script": "1.9.1",
     "chai": "2.1.x",
     "chai-as-promised": "4.3.x",
-    "sprout": "0.3.x",
-    "rimraf": "2.3.x"
+    "coffee-script": "1.9.1",
+    "mocha": "2.2.x",
+    "rimraf": "2.3.x",
+    "sprout": "0.3.x"
   },
   "scripts": {
     "test": "node_modules/.bin/mocha"
