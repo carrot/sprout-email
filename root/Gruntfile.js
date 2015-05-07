@@ -22,7 +22,7 @@ module.exports = function (grunt) {
     jade: {
       compile: {
         files: {
-          'dest/index.html': ['src/index.jade']
+          'dest/index.html': ['src/index.jade', 'src/layout.jade']
         },
         options: {
           pretty: true

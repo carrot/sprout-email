@@ -2,12 +2,14 @@
   "name": "sprout-email",
   "version": "0.0.1",
   "description": "A sprout template for creating e-mail templates.",
-  "dependencies": {},
+  "dependencies": {
+    "bluebird": "^2.9.25",
+    "ncp": "^2.0.0"
+  },
   "devDependencies": {
     "chai": "2.1.x",
     "chai-as-promised": "4.3.x",
     "coffee-script": "1.9.1",
-    "grunt-browser-sync": "^2.1.3",
     "mocha": "2.2.x",
     "rimraf": "2.3.x",
     "sprout": "0.3.x"
